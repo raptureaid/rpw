@@ -1,0 +1,33 @@
+secret.json
+
+####################
+# Pattern Lab
+####################
+config/
+core/
+extras/
+public/
+source/_patterns/**/_01-foot.mustache
+CHANGELOG
+
+####################
+# Grunt
+####################
+node_modules/
+
+####################
+# SASS
+####################
+*.sass-cache
+
+####################
+# Compiled Files
+####################
+*.css
+source/js/dist/
+
+####################
+# Misc.
+####################
+*~
+*.DS_Store
