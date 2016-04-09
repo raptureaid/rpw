@@ -1,0 +1,105 @@
+/**~
+ *  _colors.scss
+ *
+ *  Color variables to use throughout the stylesheets
+ *
+**/
+
+/** Base colors **/
+$rpw-text:          rgb(52, 54, 66);
+$rpw-accent-1:      rgb(150,45, 62);
+$rpw-accent-2:      rgb(45, 135,203);
+
+
+
+$lynn-blue:         rgb(0,  61, 165);
+$lynn-gray-web:     rgb(99, 102,106);
+$white:             rgb(255,255,255);
+
+/** Accent colors **/
+$accent-blue:       rgb(0,  175,215);
+$accent-green:      rgb(120,190,32);
+$accent-orange:     rgb(232,119,34);
+
+/** Secondary colors **/
+$secondary-blue:    rgb(139,211,230);
+$secondary-green:   rgb(179,213,125);
+$secondary-orange:  rgb(253,170,99);
+
+/** Tints **/
+$lynn-blue-90:  tint($lynn-blue, 10%);
+$lynn-blue-80:  tint($lynn-blue, 20%);
+$lynn-blue-70:  tint($lynn-blue, 30%);
+$lynn-blue-60:  tint($lynn-blue, 40%);
+$lynn-blue-50:  tint($lynn-blue, 50%);
+$lynn-blue-40:  tint($lynn-blue, 60%);
+$lynn-blue-30:  tint($lynn-blue, 70%);
+$lynn-blue-20:  tint($lynn-blue, 80%);
+$lynn-blue-10:  tint($lynn-blue, 90%);
+
+$lynn-gray-web-90:  tint($lynn-gray-web, 10%);
+$lynn-gray-web-80:  tint($lynn-gray-web, 20%);
+$lynn-gray-web-70:  tint($lynn-gray-web, 30%);
+$lynn-gray-web-60:  tint($lynn-gray-web, 40%);
+$lynn-gray-web-50:  tint($lynn-gray-web, 50%);
+$lynn-gray-web-40:  tint($lynn-gray-web, 60%);
+$lynn-gray-web-30:  tint($lynn-gray-web, 70%);
+$lynn-gray-web-20:  tint($lynn-gray-web, 80%);
+$lynn-gray-web-10:  tint($lynn-gray-web, 90%);
+
+
+/*** LEGACY ***/
+// Base Colors
+$black:             rgb(0,0,0);
+$lynn-gray:         $lynn-gray-web;
+$fk-gray:           rgb(177,179,179);
+
+$lynn-gray-90:  tint($lynn-gray-web, 10%);
+$lynn-gray-80:  tint($lynn-gray-web, 20%);
+$lynn-gray-70:  tint($lynn-gray-web, 30%);
+$lynn-gray-60:  tint($lynn-gray-web, 40%);
+$lynn-gray-50:  tint($lynn-gray-web, 50%);
+$lynn-gray-40:  tint($lynn-gray-web, 60%);
+$lynn-gray-30:  tint($lynn-gray-web, 70%);
+$lynn-gray-20:  tint($lynn-gray-web, 80%);
+$lynn-gray-10:  tint($lynn-gray-web, 90%);
+
+
+// Default border color
+$border-color:      $lynn-gray-20;
+
+// Variable lists to let SASS make our life easier
+$color-classes: "black", "white", "lynn-blue", "lynn-gray-web", "secondary-blue", "secondary-green", "secondary-orange", "accent-blue", "accent-green", "accent-orange", "lynn-gray-90", "lynn-gray-80", "lynn-gray-70", "lynn-gray-60", "lynn-gray-50", "lynn-gray-40", "lynn-gray-30", "lynn-gray-20", "lynn-gray-10", "fk-gray";
+$color-list: $black, $white, $lynn-blue, $lynn-gray-web, $secondary-blue, $secondary-green, $secondary-orange, $accent-blue, $accent-green, $accent-orange, $lynn-gray-90, $lynn-gray-80, $lynn-gray-70, $lynn-gray-60, $lynn-gray-50, $lynn-gray-40, $lynn-gray-30, $lynn-gray-20, $lynn-gray-10, $fk-gray;
+
+// Inverted color 
+$inverted-default-bg: $lynn-gray-60;
+$inverted-default-hover: $lynn-gray;
+
+$inverted-color-map: (
+    "default": (
+        "background": $inverted-default-bg,
+        "color": $white,
+        "hover": $inverted-default-hover
+    ),
+    "blue": (
+        "background": $secondary-blue,
+        "color": $white,
+        "hover": $accent-blue
+    ),
+    "green": (
+        "background": $secondary-green,
+        "color": $white,
+        "hover": $accent-green
+    ),
+    "orange": (
+        "background": $secondary-orange,
+        "color": $white,
+        "hover": $accent-orange
+    ),
+    "lynn-gray-10": (
+        "background": $lynn-gray-10,
+        "color": $lynn-gray,
+        "hover": $inverted-default-hover
+    )
+);

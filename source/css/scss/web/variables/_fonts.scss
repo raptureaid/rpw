@@ -1,0 +1,61 @@
+/**~
+ *  _font.scss
+ *
+ *  Font variables
+ *
+~**/
+
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700);
+
+
+/** Base **/
+$font-family-base: 'Roboto',Arial,sans-serif;
+$font-size-base: 16px;
+
+
+/** Fonts **/
+$font: $font-family-base;
+
+
+/** Sizes **/
+$fontsizes: (
+    base:   1,
+    xs:     .75,
+    s:      .825,
+    m:      1.25,
+    l:      1.5,
+    xl:     2,
+    xxl:    2.5
+);
+
+/** REM - Use for modules on the page **/
+$font-size--rem:        map-get($fontsizes, base) + rem;
+$font-size-xs--rem:     map-get($fontsizes, xs) + rem;
+$font-size-s--rem:      map-get($fontsizes, s) + rem;
+$font-size-m--rem:      map-get($fontsizes, m) + rem;
+$font-size-l--rem:      map-get($fontsizes, l) + rem;
+$font-size-xl--rem:     map-get($fontsizes, xl) + rem;
+$font-size-xxl--rem:    map-get($fontsizes, xxl) + rem;
+
+/** EM - Use for text elements on the page **/
+$font-size--em:         map-get($fontsizes, base) + em;
+$font-size-xs--em:      map-get($fontsizes, xs) + em;
+$font-size-s--em:       map-get($fontsizes, s) + em;
+$font-size-m--em:       map-get($fontsizes, m) + em;
+$font-size-l--em:       map-get($fontsizes, l) + em;
+$font-size-xl--em:      map-get($fontsizes, xl) + em;
+$font-size-xxl--em:     map-get($fontsizes, xxl) + em;
+                        
+/** PX - Fallback **/
+$font-size--px:         (map-get($fontsizes, base)  * $font-size-base);
+$font-size-xs--px:      (map-get($fontsizes, xs)  * $font-size-base);
+$font-size-s--px:       (map-get($fontsizes, s)  * $font-size-base);
+$font-size-m--px:       (map-get($fontsizes, m)  * $font-size-base);
+$font-size-l--px:       (map-get($fontsizes, l)  * $font-size-base);
+$font-size-xl--px:      (map-get($fontsizes, xl)  * $font-size-base);
+$font-size-xxl--px:     (map-get($fontsizes, xxl)  * $font-size-base);
+
+
+/** Weight **/
+$font-weight-bold:      700;

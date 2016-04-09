@@ -1,0 +1,22 @@
+/*  Break Points
+    Provide either a variable size or specific width to set a 
+    max/min break point.
+    Usage: @include bp-min(width);
+*/
+
+@mixin bp-min($point) {
+    @media screen and (min-width: $point) { @content; }
+}
+
+@mixin bp-max($point) {
+    // Check if the point exists in the breakpoints map
+    @if index(map-values($breakpoints), $point) {
+        // If so, subtract 1 to avoid min/max conflict
+        @media screen and (max-width: $point - 1px) { @content; }
+    }
+
+    @else {
+        // Otherwise, use the exact value provided
+        @media screen and (max-width: $point) { @content; }
+    }
+}

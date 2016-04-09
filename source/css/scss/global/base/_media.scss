@@ -1,0 +1,25 @@
+/**~
+ *  _images.scss
+ *
+~**/
+
+/** Responsive images **/
+%partial-image--responsive {
+    display: block;
+    width: 100%;
+}
+
+
+figure {
+	margin-bottom: $space;
+}
+
+iframe {
+	margin-bottom: $space;
+}
+
+/* Flexible media*/
+video, object {
+	@extend %partial-image--responsive;
+	height: auto;
+}

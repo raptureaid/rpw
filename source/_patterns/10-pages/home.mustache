@@ -1,0 +1,50 @@
+<header class="rpw-masthead {{headerClass}}">
+    <a href="/" class="rpw-branding">Robert Watson</a>
+    {{# navMain }}
+    <nav role="navigation">
+        {{# list }}
+        <ul class="{{css-prefix}}nav {{css-prefix}}list--horizontal">
+            {{# items }}
+            <li class="{{ styleModifier }}">
+                <a href="{{ url }}" title="{{ title }}">{{ title }}</a>
+            </li>
+            {{/ items }}
+        </ul>
+        {{/ list }}
+    </nav>
+    {{/ navMain }}
+</header>
+<div>
+    <section class="rpw-grid--books rpw-list--horizontal cf">
+        {{# books }}
+        <div class="rpw-list__item">
+            <div class="rpw-book">
+                <a href="{{ url }}">
+                    <img src="{{ image }}" alt="Book: {{ title }}" />
+                    <h2 class="rpw-text-heading">{{ title }}</h2>
+                    <h3 class="rpw-text-subheading">{{ subtitle }}</h3>
+                </a>
+            </div>
+        </div>
+        {{/ books }}
+    </section>
+    <section class="{{css-prefix}}billboard {{billboardClass}} cf">
+        <div class="{{css-prefix}}billboard__art">
+            <img src="../../images/RobertWatson_320x320.jpg" class="{{css-prefix}}headshot--circle" />
+        </div>
+        <div class="{{css-prefix}}billboard__content">
+            <h2 class="rpw-text-heading">Robert Watson</h2>
+            <p>is an award-winning author, professor, historian, and analyst for numerous media outlets. He has published three dozen books on history and politics, five works of fiction, and hundreds of scholarly journal articles, book chapters, and reference essays.</p>
+            {{# button }}
+            <p><a href="/about" class="{{css-prefix}}button {{css-prefix}}button--pill {{billboardButtonClass}}">More about Robert</a></p>
+            {{/ button }}
+        </div>
+    </section>
+    <section class="rpw-social-icons">
+        <a href="http://www.facebook.com/professorwatson" class="icon-facebook"></a>
+        <a href="http://twitter.com/professorwatson" class="icon-twitter"></a>
+    </section>
+</div>
+<footer class="{{css-prefix}}footer">
+    &copy; 2016 Robert Watson
+</footer>

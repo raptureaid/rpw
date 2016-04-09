@@ -1,0 +1,362 @@
+/**~
+ *  master-web.scss
+ *
+ *  The master stylesheet for the web site. This file will likely be rather 
+ *  large as it contains all layout and style settings for every element. This 
+ *  should be used for development purposes. Smaller and lighter stylesheets 
+ *  should be developed with selected elements for productions.
+ *
+~**/
+
+/**
+ *  Table of Contents
+ *
+ *  TOOLS
+ *  BASE
+ *  STRUCTURE
+ *  OBJECTS
+**/
+
+/*****************************************************************************\
+    TOOLS
+\*****************************************************************************/
+
+/** Add-ons **/
+@import "compass";
+
+/** Mixins **/
+@import "scss/global/mixins/breakpoints";
+@import "scss/web/mixins/flexbox";
+@import "scss/web/mixins/layout-sizes";
+
+/** Variables **/
+@import "scss/global/variables/globals";
+@import "scss/global/variables/colors";
+@import "scss/global/variables/spacing";
+
+@import "scss/web/variables/fonts";
+@import "scss/web/variables/breakpoints";
+
+
+
+/*****************************************************************************\
+    BASE
+\*****************************************************************************/
+
+/** Reset **/
+@import "scss/web/base/reset";
+@import "scss/global/base/main";
+@import "scss/web/base/links";
+
+/** Media **/
+@import "scss/global/base/media";
+
+
+/*****************************************************************************\
+    STRUCTURE
+\*****************************************************************************/
+
+
+
+/*****************************************************************************\
+    OBJECTS
+\*****************************************************************************/
+
+/** Buttons **/
+@import "scss/web/objects/buttons";
+
+/** Lists **/
+@import "scss/global/base/lists";
+@import "scss/web/objects/lists";
+
+
+
+/* Clearfix */
+%partial-cf {
+    *zoom: 1;
+
+    &:before, &:after {
+        content: " "; /* 1 */
+        display: table; /* 2 */
+    }
+
+    &:after {
+        clear: both;
+    }
+}
+
+.cf {
+    @extend %partial-cf;
+}
+
+p {
+    margin-bottom: $space-double;
+}
+
+
+.#{$css-prefix}masthead {
+    padding: $space;
+    text-align: center;
+
+    .#{$css-prefix}branding {
+        @include bp-max($bp-s) {
+            font-size: $font-size-xl--em;
+        }
+
+        display: block;
+        font-size: $font-size-xxl--em;
+        line-height: $line-height-least;
+        margin-bottom: $space;
+    }
+
+    .#{$css-prefix}nav .#{$css-prefix}list__item {
+        margin: 0 $space-double;
+        text-transform: uppercase;
+
+        @include bp-max($bp-m) {
+            margin: 0 $space;
+        }
+
+        @include bp-max($bp-s) {
+            margin: 0;
+            width: 100%;
+        }
+
+        a:hover {
+            border-bottom: 2px solid;
+        }
+    }
+
+    &--dark {
+        background-color: $rpw-text;
+
+        .#{$css-prefix}branding,
+        .#{$css-prefix}nav a {
+            color: $white;
+        }
+    }
+
+    &--light {
+        .#{$css-prefix}branding {
+            color: $rpw-text;
+        }
+
+        .#{$css-prefix}nav a {
+            color: $rpw-accent-1;
+        }
+    }
+}
+
+.#{$css-prefix}text-heading {
+    font-size: $font-size-xxl--em;
+    line-height: $line-height-least;
+}
+.#{$css-prefix}text-subheading {
+    font-size: $font-size-xl--em;
+    line-height: $line-height-less;
+}
+
+
+.#{$css-prefix}grid--books {
+    margin: $space-double 0;
+
+    &.#{$css-prefix}list--horizontal {
+        .#{$css-prefix}list__item {
+            display: table-cell;
+            float: left;
+            padding: $space;
+            width: 100%;
+
+            @include bp-min($bp-s) {
+                min-height: 25rem;
+                width: 50%;
+            }
+
+            @include bp-min($bp-l) {
+                width: 25%;
+            }
+        }
+    }
+
+    .#{$css-prefix}book {
+        margin: 0 auto;
+        max-width: 300px;
+
+        @include bp-min($bp-s) {
+            max-width: 170px;
+        }
+
+        .#{$css-prefix}text-heading {
+            font-size: $font-size-m--em;
+        }
+        .#{$css-prefix}text-subheading {
+            font-size: $font-size-s--em;
+        }
+
+        @include bp-min($bp-s) {
+            img {
+                transition: all .2s ease-in-out;
+            }
+
+            a:hover img {transform: scale(1.1);}
+        }
+    }
+}
+
+.#{$css-prefix}book {
+    a {
+        color: $rpw-text;
+
+        &:active, &:focus, &:hover {
+            color: $rpw-accent-1;
+        }
+    }
+
+    img {
+        @extend %partial-image--responsive;
+
+        margin-bottom: $space;
+    }
+}
+
+.#{$css-prefix}billboard
+ {
+    color: $white;
+    text-align: center;
+
+    &--accent-1 {
+        background-color: $rpw-accent-1;
+    }
+    &--accent-2 {
+        background-color: $rpw-accent-2;
+    }
+
+    @include bp-min($bp-m) {
+        display: table;
+        height: 100%;
+        width: 100%;
+
+        &__art,
+        &__content {
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        .#{$css-prefix}text-heading {
+            font-size: $font-size-xl--em;
+        }
+    }
+
+    @include bp-min($bp-l) {
+        .#{$css-prefix}text-heading {
+            font-size: $font-size-xxl--em;
+        }
+    }
+
+    &__art {
+        padding: $space-double;
+
+        .#{$css-prefix}headshot--circle {
+            @extend %partial-image--responsive;
+
+            @include border-radius(320px);
+
+            margin: 0 auto;
+            max-width: 320px;
+        }
+
+        @include bp-min($bp-m) {
+            width: 40%;
+        }
+
+        @include bp-min($bp-l) {
+            width: 50%;
+        }
+    }
+
+    &__content {
+        padding: $space-double;
+
+        @include bp-min($bp-m) {
+            text-align: left;
+            width: 60%;
+        }
+
+        @include bp-min($bp-l) {
+            width: 50%;
+        }
+
+        
+    }
+}
+
+/* Social */
+%icon-social {
+    background-image: url('http://static.lynn.edu/logos/social/web/social-icons-36px.png');
+    background-size: cover;
+    content: "";
+    display: inline-block;
+    height: 36px;
+
+    @media 
+    (-webkit-min-device-pixel-ratio: 2), 
+    (min-resolution: 192dpi) {
+        background-image: url('http://static.lynn.edu/logos/social/web/social-icons-72px.png');
+    }
+}
+
+%icon-facebook {
+    @extend %icon-social;
+    background-position: -45px 0;
+    width: 36px;
+}
+
+%icon-instagram {
+    @extend %icon-social;
+    background-position: -82px 0;
+    width: 36px;
+}
+
+%icon-linkedin {
+    @extend %icon-social;
+    background-position: -119px 0;
+    width: 36px;
+}
+
+%icon-twitter {
+    @extend %icon-social;
+    background-position: 0 0;
+    width: 44px;
+}
+
+%icon-youtube {
+    @extend %icon-social;
+    background-position: -156px 0;
+    width: 51px;
+}
+
+.#{$css-prefix}social-icons {
+    margin: $space-double;
+    text-align: center;
+    a {
+        margin: 0 $space;
+
+        &:first-of-type {
+            margin-left: 0;
+        }
+
+        &:last-of-type {
+            margin-right: 0;
+        }
+    }
+}
+
+.icon-facebook:before {
+    @extend %icon-facebook;
+}
+
+.icon-twitter:before {
+    @extend %icon-twitter;
+}
+
+
